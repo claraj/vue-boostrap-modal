@@ -1,17 +1,24 @@
 <template>
   <div id="app">
+    <h1>Bootstrap Vue Modal Dialog</h1>
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Favorites v-bind:userFavorites="favorites"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Favorites from './components/Favorites.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Favorites
+  },
+  data() {
+    return {
+      // example data
+      favorites: { color: 'orange', luckyNumber: 100 }
+    }
   }
 }
 </script>
