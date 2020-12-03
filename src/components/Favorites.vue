@@ -48,10 +48,15 @@ export default {
   },
   methods: {
     populate() {
+      // set data that the modal will display
+      // avoid v-model directly to the data that is being changed, or you'll have to think how 
+      // to get the original data back if the user changes the data but then changes their mind 
+      // and wants to cancel the edit. 
       this.updateColor = this.favorites.color
       this.updateLuckyNumber = this.favorites.luckyNumber
     },
     save() {
+      // save the data that the modal is showing
       this.favorites.color = this.updateColor
       this.favorites.luckyNumber = this.updateLuckyNumber
       // todo if you need to notify another component that the data has changed, here's a good place to do it 
